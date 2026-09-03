@@ -1,18 +1,26 @@
 # Rubik's Cube Solver
 
-A C++ project that models a Rubik's Cube and solves it using several search strategies, including depth-first search, breadth-first search, iterative deepening depth-first search, and IDA* with a corner pattern database.
+A C++ project that models a Rubik's Cube and solves it using multiple search strategies, including **DFS, BFS, IDDFS, and IDA*** with a **corner pattern database heuristic**.
 
 ## Overview
 
-This repository explores multiple cube representations and solver approaches:
+This repository explores different approaches to representing and solving a Rubik's Cube:
 
-- 3D array cube representation
-- 1D array cube representation
-- Bitboard-based cube representation
-- Search-based solvers in the `Solver` directory
-- Pattern database generation utilities in `PatternDatabases`
+* 3D array cube representation
+* 1D array cube representation
+* Bitboard-based cube representation
+* Multiple search-based solvers in the `Solver` directory
+* Corner pattern database generation and heuristic utilities in `PatternDatabases`
 
-The project is intended as a learning and experimentation codebase for cube solving algorithms, not as a polished production application.
+The project is primarily intended for learning and experimentation with **search algorithms, cube representations, and heuristic-based optimization**.
+
+## Tech Stack
+
+* **Language:** C++
+* **Build System:** CMake
+* **Standard:** C++14
+* **Algorithms:** DFS, BFS, IDDFS, IDA*
+* **Heuristics:** Corner Pattern Database
 
 ## Project Structure
 
@@ -46,9 +54,9 @@ The project is intended as a learning and experimentation codebase for cube solv
 
 ## Requirements
 
-- C++ compiler with C++14 support
-- CMake 3.20 or newer
-- Git Bash, PowerShell, or a terminal with access to the build tools
+* C++ compiler with C++14 support
+* CMake 3.20 or newer
+* Git Bash, PowerShell, or another terminal with access to the build tools
 
 ## Build
 
@@ -61,63 +69,30 @@ cmake ..
 cmake --build .
 ```
 
-This produces an executable named `rubiks_cube_solver` (or a similar build artifact depending on the generator used).
-
-## Run
-
-From the build directory:
-
-```bash
-./rubiks_cube_solver
-```
-
-On Windows:
-
-```powershell
-.\rubiks_cube_solver.exe
-```
-
-## Important Note About the Database
-
-The sample solver code in `main.cpp` contains a hard-coded database path:
-
-```cpp
-string fileName = "C:\\Users\\user\\CLionProjects\\rubiks-cube-solver\\Databases\\cornerDepth5V1.txt";
-```
-
-This path is machine-specific. To run the IDA* example successfully on your machine:
-
-1. Update the value of `fileName` in `main.cpp` to point to a valid database file on your system.
-2. If needed, generate or place a pattern database under `Databases/`.
-3. Rebuild the project.
-
-The repository contains a `Databases` folder, so a local path such as:
-
-```cpp
-string fileName = "Databases/cornerDepth5V1.txt";
-```
-
-may be more portable if you run from the project root.
+This builds the Rubik's Cube solver executable.
 
 ## Solvers Included
 
-- `DFSSolver` — depth-first search solver
-- `BFSSolver` — breadth-first search solver
-- `IDDFSSolver` — iterative deepening depth-first search
-- `IDAstarSolver` — IDA* solver using a corner pattern database heuristic
+* `DFSSolver` — Depth-First Search solver
+* `BFSSolver` — Breadth-First Search solver
+* `IDDFSSolver` — Iterative Deepening Depth-First Search solver
+* `IDAstarSolver` — IDA* solver using a corner pattern database heuristic
 
 ## Example Usage
 
 The `main.cpp` file contains commented examples for:
 
-- testing cube transformations
-- verifying equality and assignment semantics
-- random shuffling
-- BFS, DFS, IDDFS, and IDA* solving
-- pattern database generation
+* testing cube transformations
+* verifying equality and assignment semantics
+* randomly shuffling the cube
+* solving using BFS, DFS, IDDFS, and IDA*
+* generating the corner pattern database
 
-These examples are useful as a reference for how the library is intended to be used.
+These examples provide a reference for using the cube models and solver implementations.
 
-## License
+## Purpose
 
-This project does not currently declare a license file. If you are using it in a repository or publishing code, check whether the original author requires attribution or publication constraints before distributing it.
+This project was developed to explore how **different state representations, search strategies, and heuristics** affect Rubik's Cube solving performance.
+
+
+
